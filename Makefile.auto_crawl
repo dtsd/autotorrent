@@ -1,0 +1,57 @@
+INCLUDES = -I. \
+	-I/usr/local/include -I/usr/include
+
+	#-I/opt/my/include \
+
+LIBS = $(shell curl-config --libs) \
+	-L/usr/local/lib -L/lib \
+	-lpcre -lpthread -lsqlite3 
+
+
+UNAME := $(shell uname)
+ifneq ($(UNAME), Linux)
+	LIBS += -liconv
+endif
+#-liconv
+
+#-L/opt/my/lib \
+#/opt/my/lib/libsqlite3.a
+
+DEBUG = -g -O2
+
+CC = gcc
+CFLAGS = -Wall --std=c99 $(DEFINES) $(INCLUDES) `curl-config --cflags`
+CFLAGS += $(DEBUG) 
+LDFLAGS += $(LIBS) 
+ 
+SRCS_CRAWL =  crawl_main.c crawl.c crawl_status.c storage.c mycurl.c webstr.c
+OBJS_CRAWL = $(patsubst %.c, %.o, $(SRCS_CRAWL))
+PROG_CRAWL = auto_crawl
+
+SRCS_RSS1 = rss1_main.c storage.c webstr.c
+OBJS_RSS1 = $(patsubst %.c, %.o, $(SRCS_RSS1))
+PROG_RSS1 = auto_rss1
+
+OBJS_ALL = $(OBJS_CRAWL) $(OBJS_RSS1)
+
+all: $(PROG_CRAWL) $(PROG_RSS1)
+
+$(PROG_CRAWL): $(OBJS_CRAWL)
+	$(CC) $(OBJS_CRAWL) $(LDFLAGS) -o $@ 
+
+$(PROG_RSS1): $(OBJS_RSS1)
+	$(CC) $(OBJS_RSS1) $(LDFLAGS) -o $@ 
+
+clean:
+	rm  -f $(OBJS_ALL) $(PROG_CRAWL) $(PROG_RSS1)
+
+.PHONY: update dist tags
+ 
+update:
+	svn update
+
+dist:
+	svn commit -m "Next milestone"
+
+tags:
+	ctags --recurse=yes .

@@ -1,0 +1,31 @@
+INCLUDES = -I. \
+	-I/usr/local/include -I/usr/include
+
+	#-I/opt/my/include \
+
+LIBS = `curl-config --libs` \
+	-L/usr/local/lib -L/lib \
+	-lpcre -lpthread 
+
+#-L/opt/my/lib \
+#/opt/my/lib/libsqlite3.a
+
+DEBUG = -g -O2
+
+CC = gcc
+CFLAGS = -Wall --std=c99 $(DEFINES) $(INCLUDES) `curl-config --cflags`
+#CFLAGS += $(DEBUG) 
+LDFLAGS += $(LIBS) 
+ 
+SRCS =  main.c
+OBJS = $(patsubst %.c, %.o, $(SRCS))
+PROG =	feedparser
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) -o $@ 
+
+clean:
+	rm  -f $(OBJS) $(PROG) 
+ 

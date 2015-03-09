@@ -1,0 +1,4 @@
+<option\s+id=\"fs-\d+\"\s+value=\"(?P<value>\d+)\"[^>]*>\s*([|-]+)?(?P<name>[^<]+)</option>
+
+<tr[^>]+>\s*<td[^>]+>\s*<img[^>]+>\s*</td>\s*<td[^>]+>\s*(<span[^>]+>)?[^<]+(</span>)?\s*</td>\s*<td[^>]+>\s*<a[^>]+>[^<]+</a></td>\s*<td[^>]+>\s*<div>\s*<a\s*class=\"[^\"]+\"\s*href=\"(?P<url>[^\"]+)\">\s*(<b>)?(?P<name>[^<]+)(</b>)?\s*</a>\s*</div>\s*</td>\s*<td[^>]+>\s*<a[^>]+>[^<]+</a>\s*</td>\s*<td[^>]+>\s*<u>\s*(?P<size>\d+)\s*</u>\s*<a\s*class=\"[^\"]+\"\s*href=\"(?P<download_url>[^\"]+)\">[^<]+</a>\s*</td>\s*<td[^>]+>\s*(<b>)?\s*(?P<seed>\d+)\s*(</b>)?\s*</td>\s*<td[^>]+>\s*(<b>)?\s*(?P<leech>\d+)\s*(</b>)?\s*</td>\s*<td[^>]+>\s*(?P<download_count>\d+)\s*</td>\s*<td[^>]+>\s*<u>\s*(?P<timestamp>\d+)\s*</u>\s*
+

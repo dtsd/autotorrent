@@ -1,0 +1,27 @@
+<tr class="tCenter">
+	<td class="row1"><img src="http://static.torrents.ru/templates/default/images/icon_minipost.gif" class="icon1" alt="" /></td>
+
+	<td class="row1 tCenter" title="закрыто"><span class="tor-icon tor-closed">x</span></td>
+
+		<td class="row1"><a class="gen f" href="tracker.php?f=2093">Фильмы 2009 (новинки)</a></td>
+
+		<td class="row4 med tLeft u">
+		<div>
+						<a class="med tLink" href="./viewtopic.php?t=1771093">Отель для собак / Hotel For Dogs (Тор Фреденталь / Thor Freudenthal)<wbr> [2009 г., Комедия, Семейный, HDRip]</a>
+		</div>
+			</td>
+		<td class="row1"><a class="med" href="tracker.php?pid=1097114">hellbee</a></td>
+		<td class="row4 small nowrap">
+
+		<u>1333204432</u>
+		1.24&nbsp;GB	</td>
+	<td class="row4 seedmed"><b>100</b></td>
+	<td class="row4 leechmed" title="Личи"><b>1</b></td>
+	<td class="row4 small">365</td>
+		<td class="row4 small nowrap" style="padding: 1px 3px 2px;" title="Добавлен">
+
+		<u>1240161969</u>
+		<p>20:26</p>
+		<p>19-Апр-09</p>
+	</td>
+</tr>
